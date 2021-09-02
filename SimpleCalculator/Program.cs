@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//using System.Threading.Tasks;namespace SimpleCalculator
-
-class Program
-{
+namespace SimpleCalculator
+{ 
+   class Program
+   {
     static void Main(string[] args)
     {
         int a;
         int b;
         string operand;
-        // ConsoleKeyInfo status;
         float answer;
-
 
         Console.Write("Kérem az első számot: ");
         a = Convert.ToInt32(Console.ReadLine());
@@ -32,7 +26,14 @@ class Program
                 answer = a + b;
                 break;
             case "/":
-                answer = a / b;
+                    if (b == 0)
+                    {
+                        throw new NotImplementedException3("A b értéke nem lehet nulla.");
+                    }
+                    else
+                    { answer = a / b; 
+                    }
+                        
                 break;
             case "*":
                 answer = a * b;
@@ -51,8 +52,8 @@ class Program
 
 
     }
+   }
+
 }
-
-
 
 

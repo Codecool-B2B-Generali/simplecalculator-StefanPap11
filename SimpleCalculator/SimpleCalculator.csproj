@@ -9,8 +9,4 @@
     <None Remove="Program.cs_eredeti" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Program.cs_eredeti" />
-  </ItemGroup>
-
 </Project>
