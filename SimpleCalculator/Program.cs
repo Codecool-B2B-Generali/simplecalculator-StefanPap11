@@ -1,32 +1,58 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//using System.Threading.Tasks;namespace SimpleCalculator
 
-namespace SimpleCalculator
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int a;
+        int b;
+        string operand;
+        // ConsoleKeyInfo status;
+        float answer;
+
+
+        Console.Write("Kérem az első számot: ");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Kérem a második számot: ");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.Write("kérem az operátort (+, -, /, *): ");
+        operand = Console.ReadLine();
+
+        switch (operand)
         {
-            SimpleCalculator();
+            case "-":
+                answer = a - b;
+                break;
+            case "+":
+                answer = a + b;
+                break;
+            case "/":
+                answer = a / b;
+                break;
+            case "*":
+                answer = a * b;
+                break;
+            default:
+                answer = 0;
+                break;
+
         }
-        static void SimpleCalculator()
-        {
-                int a = AskForANumber();
-                char op = AskForAnOperation();
-                int b = AskForANumber();
-                Console.WriteLine($"The result is {Calculate(op, a, b)}");
-        }
-          
-        private static int AskForANumber()
-        {
-            throw new NotImplementedException();
-        }
-        private static char AskForAnOperation()
-        {
-            throw new NotImplementedException();
-        }
-        private static int Calculate(char op, int a, int b)
-        {
-            throw new NotImplementedException();
-        }
+        Console.Write("Eredmény: ");
+
+
+
+        Console.WriteLine(a.ToString() + " " + operand + " " + b.ToString() + " = " + answer.ToString());
+
+
+
     }
 }
+
+
+
+
