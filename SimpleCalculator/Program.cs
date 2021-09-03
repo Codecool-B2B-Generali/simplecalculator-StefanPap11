@@ -9,15 +9,29 @@ namespace SimpleCalculator
         int b;
         string operand;
         float answer;
+        
 
         Console.Write("Kérem az első számot: ");
-        a = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Kérem a második számot: ");
-        b = Convert.ToInt32(Console.ReadLine());
+
+            while (!int.TryParse(Console.ReadLine(), out a))
+            {
+                Console.WriteLine("Invalid input. Please provide a number!");
+            }
+         
+       Console.Write("Kérem a második számot: ");
+            while (!int.TryParse(Console.ReadLine(), out b))
+            {
+                Console.WriteLine("Invalid input. Please provide a number!");
+            }
+           
+
+
         Console.Write("kérem az operátort (+, -, /, *): ");
         operand = Console.ReadLine();
 
-        switch (operand)
+      
+
+            switch (operand)
         {
             case "-":
                 answer = a - b;
